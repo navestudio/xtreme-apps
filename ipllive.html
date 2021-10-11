@@ -52,8 +52,49 @@ https://templatemo.com/tm-547-real-dynamic
                 </div>
             </section>
            
-           <p align="center"><iframe allowfullscreen="" frameborder="15" height="420" marginheight="0" marginwidth="0" mozallowfullscreen="" name="iframe1" scrolling="no" src="http://k1.hitcric.club/" webkitallowfullscreen="" width="600">Your Browser not supports IFRAMES.</iframe>
-               </p><div class="widget-content" style="height: 100; width: 600;">
+           <div id="player">
+</div>
+<script type="text/javascript">
+jwplayer("player").resize(480, 270);
+    jwplayer('player').setup({
+        file: 'https://vkvsd5.mycdn.me/hls/1806865140369.m3u8/sig/WsrajpfyaSc/srcIp/49.128.161.134/expires/1634416881696/clientType/13/srcAg/CHROME/fromCache/1/mid/3087970347921/id/1806865140369/video.m3u8?p',
+playbackRateControls: [0.75, 1, 1.25, 1.5],
+        title: 'live tv',
+        width: '100%',
+        aspectratio: '16:9',
+        mute: false,
+        repeat: 'true',
+        autostart: true,
+        primary: 'html5',
+        type: 'm3u8',
+        setFullscreen: true,
+controls: true,
+showCode: true,
+responsive: true,
+skin: {
+  name: "glow",
+       active: "red",
+       inactive: "",
+       background: ""
+  }
+    });
+</script>
+</div>
+</div>
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
 
                
             <footer class="row">
