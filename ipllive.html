@@ -49,38 +49,12 @@ https://templatemo.com/tm-547-real-dynamic
                 <div class="col-12 text-center mx-auto tm-about-box">
                     <h2 class="tm-text-primary tm-my-1 tm-mb-5 tm-intro-text">WHATCH LIVE HERE</h2>
                     <p>FIRST LINK HAVE ADS PLEASE ADJUST</p>
-               <center>
-<div style="max-width:420; max-height: 210;">
-<video id="player" class="plyr" controls preload="metadata"><source src="http://31.220.41.86:8081/live/skysports-cricket1.stream/playlist.m3u8" type="application/x-mpegURL"></video></div></center>
-<script>
-document.addEventListener("DOMContentLoaded",()=> {
-  const e = document.querySelector("video"),
-    n = e.getElementsByTagName("source")[0].src,
-    o = {};
-  if(Hls.isSupported()) {
-    var config = {
-      maxMaxBufferLength: 100,
-    };
-    const t = new Hls(config);
-    t.loadSource(n), t.on(Hls.Events.MANIFEST_PARSED, function(n, l) {
-      const s = t.levels.map(e => e.height);
-      o.quality = {
-        default: s[0],
-        options: s,
-        forced: !0,
-        onChange: e => (function(e) {
-          window.hls.levels.forEach((n, o) => {
-            n.height === e && (window.hls.currentLevel = o)
-          })
-        })(e)
-      };
-      new Plyr(e, o)
-    }), t.attachMedia(e), window.hls = t
-  } else {
-    new Plyr(e, o)
-  }
-});
-</script>
+               <script src="//jwpsrv.com/library/O4mPlqeTEeK_viIACpYGxA.js"></script>
+<div id="my-video">
+</div>
+<script>// <![CDATA[
+jwplayer('my-video').setup({         file: 'http://feed.play.mv/live/1009/H92bfaXp9Z/master.m3u8',         width: '100%',         height: '150',         autostart: 'false',    image: ''     ,   primary: 'html5', hlshtml: 'true'     });
+// ]]></script>
 
                 
     <script src="js/jquery-3.4.1.min.js"></script>
