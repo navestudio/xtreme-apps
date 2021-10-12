@@ -49,41 +49,29 @@ https://templatemo.com/tm-547-real-dynamic
                 <div class="col-12 text-center mx-auto tm-about-box">
                     <h2 class="tm-text-primary tm-my-1 tm-mb-5 tm-intro-text">WHATCH LIVE HERE</h2>
                     <p>FIRST LINK HAVE ADS PLEASE ADJUST</p>
-                    <div id="Play"></div>
-<script type='text/javascript'>
-  jwplayer("Play").setup({
-"stretching":"exactfit",
-
-    "title": "My Love",
-        "width": "580",
-        "height": "400",
-        "skin": "seven",
-        "autostart": "true",
-         "abouttext":"MyliveCricket",
-"aboutlink":"http://www.MyliveCricket.in/",
-"target":"_blank",
-"allownetworking":"internal",
-
-
-"file":"http://93.152.174.144:4000/play/ss1in/index.m3u8" type="application/x-mpegURL",    		
-  });
-														 
-
-jwplayer("Play").onError(function(){
-	jwplayer().load
-
-({file:"https://mylivecricket.net/hls/live/ip.m3u8",image:"http://content.jwplatform.com/thumbs/7RtXk3vl-480.jpg"});
-	jwplayer().play();
-});
-jwplayer("Play").onComplete(function(){
-	window.location = window.location.href;
-}); 	  -
-			  
-jwplayer("Play").onPlay(function(){
-	clearTimeout(theTimeout);
-});
-</script>
-</div>
+                    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <video id="video" controls></video>
+    <script>
+    if(Hls.isSupported())
+    {
+        var video = document.getElementById('video');
+        var hls = new Hls();
+        hls.loadSource('http://93.152.174.144:4000/play/ss1in/index.m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED,function()
+        {
+            video.play();
+        });
+    }
+    else if (video.canPlayType('application/vnd.apple.mpegurl'))
+    {
+        video.src = 'playlist.m3u8';
+        video.addEventListener('canplay',function()
+        {
+            video.play();
+        });
+    }
+    </script>
                     
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
