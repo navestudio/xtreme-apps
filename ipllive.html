@@ -76,7 +76,23 @@ https://templatemo.com/tm-547-real-dynamic
                     <video width="350" height="250" controls>
         <source src="http://93.152.174.144:4000/play/ss1in/index.m3u8" type="application/x-mpegURL">
     </video>
-                    
+
+               <script src="https://cdn.jwplayer.com/libraries/aBCdE12G.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Here is the <div> for the player -->
+    <div id="myElement"></div>
+
+    <script type="text/JavaScript">
+
+      jwplayer("myElement").setup({ 
+        "playlist": "http://93.152.174.144:4000/play/ss1in/index.m3u8"
+      });
+
+    </script>     
+
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/parallax.min.js"></script>
