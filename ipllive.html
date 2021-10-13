@@ -49,46 +49,30 @@ https://templatemo.com/tm-547-real-dynamic
                 <div class="col-12 text-center mx-auto tm-about-box">
                     <h2 class="tm-text-primary tm-my-1 tm-mb-5 tm-intro-text">WHATCH LIVE HERE</h2>
                     <p>FIRST LINK HAVE ADS PLEASE ADJUST</p>
-<div class='section' id='header'><div class='widget HTML' data-version='1' id='HTML1'>
-<div class='widget-content'>
-<p align="center">
-<div id="Play"></div>
-<script type='text/javascript'>
-  jwplayer("Play").setup({
-"stretching":"exactfit",
-
-    "title": "My Love",
-        "width": "580",
-        "height": "400",
-        "skin": "seven",
-        "autostart": "true",
-         "abouttext":"MyliveCricket",
-"aboutlink":"http://www.MyliveCricket.in/",
-"target":"_blank",
-"allownetworking":"internal",
-
-
-"file":"https://vklive6-6.vkuser.net/hls/1625295686304.m3u8/sig/KO98IFqpPQ4/srcIp/106.217.203.228/urls/185.226.53.63/expires/1634429558965/clientType/13/srcAg/CHROME_ANDROID/fromCache/1/mid/2770914585504/id/1625295686304/video.m3u8",    		
+			
+			<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<video id="video"></video>
+<script>
+  if(Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    hls.loadSource('http://cdncities.com/deranalive/deranalive/playlist.m3u8');
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
   });
-														 
-
-jwplayer("Play").onError(function(){
-	jwplayer().load
-
-({file:"https://mylivecricket.net/hls/live/ip.m3u8",image:"http://content.jwplatform.com/thumbs/7RtXk3vl-480.jpg"});
-	jwplayer().play();
-});
-jwplayer("Play").onComplete(function(){
-	window.location = window.location.href;
-}); 	  -
-			  
-jwplayer("Play").onPlay(function(){
-	clearTimeout(theTimeout);
-});
+ }
+ // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+ // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+ // This is using the built-in support of the plain video element, without using hls.js.
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = 'https://vklive6-6.vkuser.net/hls/1625295686304.m3u8/sig/KO98IFqpPQ4/srcIp/106.217.203.228/urls/185.226.53.63/expires/1634429558965/clientType/13/srcAg/CHROME_ANDROID/fromCache/1/mid/2770914585504/id/1625295686304/video.m3u8';
+    video.addEventListener('canplay',function() {
+      video.play();
+    });
+  }
 </script>
-</div>
- </p>
-</div>
+
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
