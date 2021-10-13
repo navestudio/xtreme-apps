@@ -49,47 +49,24 @@ https://templatemo.com/tm-547-real-dynamic
                 <div class="col-12 text-center mx-auto tm-about-box">
                     <h2 class="tm-text-primary tm-my-1 tm-mb-5 tm-intro-text">WHATCH LIVE HERE</h2>
                     <p>FIRST LINK HAVE ADS PLEASE ADJUST</p>
-<iframe width="620" height="444" src="https://strawpoll.com/embed/kqfwvfoxd" style="width: 100%; height: 444px;" frameborder="0" allowfullscreen></iframe>
-                    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <video id="video" controls></video>
-    <script>
-    if(Hls.isSupported())
-    {
-        var video = document.getElementById('video');
-        var hls = new Hls();
-        hls.loadSource('http://93.152.174.144:4000/play/ss1in/index.m3u8');
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED,function()
-        {
-            video.play();
-        });
-    }
-    else if (video.canPlayType('application/vnd.apple.mpegurl'))
-    {
-        video.src = 'playlist.m3u8';
-        video.addEventListener('canplay',function()
-        {
-            video.play();
-        });
-    }
-    </script>
-                    
+<script type='text/javascript' src='jwplayer2/jwplayer.js'></script>
 
-               <script src="https://cdn.jwplayer.com/libraries/aBCdE12G.js"></script>
-  </head>
+<div id='mediaplayer'></div>
 
-  <body>
-
-    <!-- Here is the <div> for the player -->
-    <div id="myElement"></div>
-
-    <script type="text/JavaScript">
-
-      jwplayer("myElement").setup({ 
-        "playlist": "http://93.152.174.144:4000/play/ss1in/index.m3u8"
-      });
-
-    </script>     
+<script type="text/javascript">
+jwplayer('mediaplayer').setup({
+'id': 'playerID',
+'width': '480',
+'height': '270',
+'file': 'http://93.152.174.144:4000/play/ss1in/index.m3u8',
+'image': '/live.png',
+'modes': [
+{type: 'html5'},
+{type: 'flash', src: 'player.swf'},
+{type: 'download'}
+]
+});
+</script>
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
