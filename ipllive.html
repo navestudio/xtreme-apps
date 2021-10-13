@@ -49,31 +49,8 @@ https://templatemo.com/tm-547-real-dynamic
                 <div class="col-12 text-center mx-auto tm-about-box">
                     <h2 class="tm-text-primary tm-my-1 tm-mb-5 tm-intro-text">WHATCH LIVE HERE</h2>
                     <p>FIRST LINK HAVE ADS PLEASE ADJUST</p>
+			<iframe src="https://vk.com/video_ext.php?oid=678355089&id=456239054&hash=eb65676d907fb728" width="350" height="250" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
 			
-			<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<video id="video"></video>
-<script>
-  if(Hls.isSupported()) {
-    var video = document.getElementById('video');
-    var hls = new Hls();
-    hls.loadSource('http://cdncities.com/deranalive/deranalive/playlist.m3u8');
-    hls.attachMedia(video);
-    hls.on(Hls.Events.MANIFEST_PARSED,function() {
-      video.play();
-  });
- }
- // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
- // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
- // This is using the built-in support of the plain video element, without using hls.js.
-  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = 'https://vklive6-6.vkuser.net/hls/1625295686304.m3u8/sig/KO98IFqpPQ4/srcIp/106.217.203.228/urls/185.226.53.63/expires/1634429558965/clientType/13/srcAg/CHROME_ANDROID/fromCache/1/mid/2770914585504/id/1625295686304/video.m3u8';
-    video.addEventListener('canplay',function() {
-      video.play();
-    });
-  }
-</script>
-
-
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/parallax.min.js"></script>
